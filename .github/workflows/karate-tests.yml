@@ -1,4 +1,4 @@
-﻿name: Karate POS Tests with Allure Report
+name: Karate POS Tests with Allure Report
 
 on:
   push:
@@ -93,10 +93,10 @@ jobs:
       - name: Show Spring Boot logs
         run: cat app.log
 
-      - name: Warmup — register Avro schemas
+      - name: Warmup â€” register Avro schemas
         run: |
           echo "Warmup calls..."
-          for attempt in 1 2 3 4 5; do
+          for attempt in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20; do
             R=$(curl -s -o /dev/null -w "%{http_code}" -X POST http://localhost:8085/pos/transactions \
               -H "Content-Type: application/json" \
               -d "{\"transactionId\":\"WARM-00$attempt\",\"storeId\":\"STORE-001\",\"registerId\":\"REG-001\",\"totalAmount\":10.00,\"paymentMethod\":\"CASH\",\"cashierId\":\"C001\"}")
@@ -105,7 +105,7 @@ jobs:
               echo "Schema registered successfully!"
               break
             fi
-            sleep 5
+            sleep 15
           done
           echo "=== Registered schemas ==="
           curl -s http://localhost:8081/subjects || true
