@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "LoyaltyEvent",
+  "namespace": "com.pos.avro",
+  "fields": [
+    { "name": "transactionId",  "type": "string" },
+    { "name": "loyaltyId",      "type": "string" },
+    { "name": "eventType",      "type": "string" },
+    { "name": "pointsBefore",   "type": "long",   "default": 0 },
+    { "name": "pointsEarned",   "type": "long",   "default": 0 },
+    { "name": "pointsRedeemed", "type": "long",   "default": 0 },
+    { "name": "pointsAfter",    "type": "long",   "default": 0 },
+    { "name": "timestamp",      "type": "long" }
+  ]
+}

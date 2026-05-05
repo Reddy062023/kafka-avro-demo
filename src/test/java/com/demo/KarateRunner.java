@@ -1,12 +1,12 @@
 package com.demo;
-
 import com.intuit.karate.junit5.Karate;
-
 class KarateRunner {
-
     @Karate.Test
-    Karate testOrders() {
-        return Karate.run("classpath:karate/orders/orders.feature")
-                     .relativeTo(getClass());
+    Karate testPosCashTransaction() {
+        return Karate.run("classpath:karate/pos/pos-cash-transaction.feature");
+    }
+    @Karate.Test
+    Karate testPosCardPayment() {
+        return Karate.run("classpath:karate/pos/pos-card-payment.feature");
     }
 }

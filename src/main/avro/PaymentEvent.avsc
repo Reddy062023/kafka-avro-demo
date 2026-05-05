@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "PaymentEvent",
+  "namespace": "com.pos.avro",
+  "fields": [
+    { "name": "transactionId",  "type": "string" },
+    { "name": "cardType",       "type": "string" },
+    { "name": "maskedPAN",      "type": "string" },
+    { "name": "amount",         "type": "double" },
+    { "name": "authCode",       "type": "string", "default": "" },
+    { "name": "approved",       "type": "boolean", "default": true },
+    { "name": "failureReason",  "type": "string", "default": "" },
+    { "name": "cashBackAmount", "type": "double",  "default": 0.0 },
+    { "name": "timestamp",      "type": "long" }
+  ]
+}
