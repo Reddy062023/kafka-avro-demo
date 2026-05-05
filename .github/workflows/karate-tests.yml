@@ -28,6 +28,64 @@ jobs:
     name: Run Karate POS Tests
     runs-on: ubuntu-latest
 
+    services:
+      zookeeper:
+        image: confluentinc/cp-zookeeper:7.4.0
+        env:
+          ZOOKEEPER_CLIENT_PORT: 2181
+          ZOOKEEPER_TICK_TIME: 2000
+        ports:
+          - 2181:2181
+
+      kafka:
+        image: confluentinc/cp-kafka:7.4.0
+        env:
+          KAFKA_BROKER_ID: 1
+          KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+          KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+          KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+          KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+          KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+        ports:
+          - 9092:9092
+
+      schema-registry:
+        image: confluentinc/cp-schema-registry:7.4.0
+        env:
+          SCHEMA_REGISTRY_HOST_NAME: schema-registry
+          SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka:9092
+          SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
+        ports:
+          - 8081:8081
+
+      mongodb:
+        image: mongo:6.0
+        ports:
+          - 27017:27017
+
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_DB: qadb
+          POSTGRES_USER: qauser
+          POSTGRES_PASSWORD: qapass
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      rabbitmq:
+        image: rabbitmq:3-management
+        env:
+          RABBITMQ_DEFAULT_USER: guest
+          RABBITMQ_DEFAULT_PASS: guest
+        ports:
+          - 5672:5672
+          - 15672:15672
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -45,20 +103,14 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Start infrastructure with docker-compose
+      - name: Wait for all services
         run: |
-          docker compose -f docker-compose-ci.yml up -d
-          echo "Waiting 90s for all services to start..."
-          sleep 90
-
-      - name: Verify all services
-        run: |
-          echo "=== Docker containers ==="
-          docker ps
+          echo "Waiting 60s for all services..."
+          sleep 60
           echo "=== Kafka ==="
           nc -z localhost 9092 && echo "KAFKA READY" || echo "KAFKA NOT READY"
           echo "=== Schema Registry ==="
-          curl -s http://localhost:8081/subjects && echo " SR READY" || echo " SR NOT READY"
+          curl -s http://localhost:8081/subjects || echo "SR not ready"
           echo "=== PostgreSQL ==="
           pg_isready -h localhost -p 5432 -U qauser && echo "PG READY" || echo "PG NOT READY"
           echo "=== MongoDB ==="
@@ -93,22 +145,41 @@ jobs:
       - name: Show Spring Boot logs
         run: cat app.log
 
-      - name: Warmup â€” register Avro schemas
+      - name: Warmup — wait for Kafka producer to be ready
         run: |
-          echo "Warmup calls..."
-          for attempt in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20; do
+          echo "=== Warmup Transaction schema ==="
+          for attempt in 1 2 3 4 5 6 7 8 9 10; do
             R=$(curl -s -o /dev/null -w "%{http_code}" -X POST http://localhost:8085/pos/transactions \
               -H "Content-Type: application/json" \
-              -d "{\"transactionId\":\"WARM-00$attempt\",\"storeId\":\"STORE-001\",\"registerId\":\"REG-001\",\"totalAmount\":10.00,\"paymentMethod\":\"CASH\",\"cashierId\":\"C001\"}")
-            echo "Attempt $attempt: HTTP $R"
-            if [ "$R" = "201" ]; then
-              echo "Schema registered successfully!"
-              break
-            fi
-            sleep 15
+              -d "{\"transactionId\":\"WARM-TXN-$attempt\",\"storeId\":\"STORE-001\",\"registerId\":\"REG-001\",\"totalAmount\":10.00,\"paymentMethod\":\"CASH\",\"cashierId\":\"C001\"}")
+            echo "Transaction attempt $attempt: HTTP $R"
+            if [ "$R" = "201" ]; then echo "Transaction schema registered!"; break; fi
+            sleep 10
           done
-          echo "=== Registered schemas ==="
+
+          echo "=== Warmup Payment schema ==="
+          for attempt in 1 2 3 4 5 6 7 8 9 10; do
+            R=$(curl -s -o /dev/null -w "%{http_code}" -X POST http://localhost:8085/pos/payments \
+              -H "Content-Type: application/json" \
+              -d "{\"transactionId\":\"WARM-PAY-$attempt\",\"cardType\":\"VISA\",\"maskedPAN\":\"****1234\",\"amount\":10.00,\"authCode\":\"AUTH001\",\"approved\":true,\"cashBackAmount\":0.0}")
+            echo "Payment attempt $attempt: HTTP $R"
+            if [ "$R" = "201" ]; then echo "Payment schema registered!"; break; fi
+            sleep 10
+          done
+
+          echo "=== Warmup Loyalty schema ==="
+          for attempt in 1 2 3 4 5 6 7 8 9 10; do
+            R=$(curl -s -o /dev/null -w "%{http_code}" -X POST http://localhost:8085/pos/loyalty \
+              -H "Content-Type: application/json" \
+              -d "{\"transactionId\":\"WARM-LOY-$attempt\",\"loyaltyId\":\"LOY-WARM-$attempt\",\"eventType\":\"EARN\",\"pointsBefore\":0,\"pointsEarned\":10,\"pointsRedeemed\":0}")
+            echo "Loyalty attempt $attempt: HTTP $R"
+            if [ "$R" = "201" ]; then echo "Loyalty schema registered!"; break; fi
+            sleep 10
+          done
+
+          echo "=== All registered schemas ==="
           curl -s http://localhost:8081/subjects || true
+          sleep 5
 
       - name: Run POS Cash Transaction tests
         run: |
