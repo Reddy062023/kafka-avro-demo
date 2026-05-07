@@ -19,6 +19,7 @@
         <java.version>17</java.version>
         <avro.version>1.11.3</avro.version>
         <confluent.version>7.4.0</confluent.version>
+        <allure.version>2.24.0</allure.version>
     </properties>
 
     <repositories>
@@ -41,11 +42,12 @@
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
         </dependency>
+
         <!-- Jackson Java 8 Date/Time support -->
-<dependency>
-    <groupId>com.fasterxml.jackson.datatype</groupId>
-    <artifactId>jackson-datatype-jsr310</artifactId>
-</dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
 
         <!-- RabbitMQ -->
         <dependency>
@@ -92,7 +94,7 @@
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
 
-        <!-- Spring Data JPA (works with PostgreSQL and Oracle) -->
+        <!-- Spring Data JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -110,6 +112,14 @@
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-junit5</artifactId>
             <version>1.4.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Allure JUnit5 -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -175,6 +185,16 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!-- Allure Maven Plugin -->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.12.0</version>
+                <configuration>
+                    <reportVersion>${allure.version}</reportVersion>
+                </configuration>
             </plugin>
 
         </plugins>

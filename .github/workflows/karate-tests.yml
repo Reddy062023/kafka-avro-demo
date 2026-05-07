@@ -19,9 +19,11 @@ on:
           - testPosLoyalty
 
 permissions:
-  contents: read
+  contents: write
   checks: write
   pull-requests: write
+  pages: write
+  id-token: write
 
 jobs:
   karate-tests:
@@ -50,12 +52,6 @@ jobs:
           docker compose -f docker-compose-ci.yml up -d
           echo "Waiting 90s for all services to start..."
           sleep 90
-
-      - name: Show Schema Registry logs
-        run: |
-          sleep 30
-          echo "=== Schema Registry logs ==="
-          docker logs kafka-avro-demo-schema-registry-1 2>&1 || true
 
       - name: Verify all services
         run: |
@@ -99,7 +95,7 @@ jobs:
       - name: Show Spring Boot logs
         run: cat app.log
 
-      - name: Warmup â€” register Avro schemas
+      - name: Warmup - register Avro schemas
         run: |
           echo "Warmup calls..."
           for attempt in 1 2 3 4 5; do
@@ -144,10 +140,20 @@ jobs:
           ls -la target/surefire-reports/ || echo "No surefire reports"
           echo "=== karate-reports ==="
           ls -la target/karate-reports/ || echo "No karate reports"
+          echo "=== allure-results ==="
+          ls -la target/allure-results/ || echo "No allure results"
 
       - name: Generate Allure Report
         if: always()
         run: mvn allure:report -DfailIfNoTests=false || true
+
+      - name: Deploy Allure Report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/site/allure-maven-plugin
+          destination_dir: allure-report
 
       - name: Upload Allure HTML Report
         if: always()
