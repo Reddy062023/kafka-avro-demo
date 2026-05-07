@@ -51,6 +51,12 @@ jobs:
           echo "Waiting 90s for all services to start..."
           sleep 90
 
+      - name: Show Schema Registry logs
+        run: |
+          sleep 30
+          echo "=== Schema Registry logs ==="
+          docker logs kafka-avro-demo-schema-registry-1 2>&1 || true
+
       - name: Verify all services
         run: |
           echo "=== Docker containers ==="
@@ -93,7 +99,7 @@ jobs:
       - name: Show Spring Boot logs
         run: cat app.log
 
-      - name: Warmup — register Avro schemas
+      - name: Warmup â€” register Avro schemas
         run: |
           echo "Warmup calls..."
           for attempt in 1 2 3 4 5; do
