@@ -137,6 +137,32 @@ jobs:
         if: always()
         run: mvn allure:report -DfailIfNoTests=false || true
 
+      - name: Create reports index page
+        if: always()
+        run: |
+          mkdir -p target/gh-pages-root
+          cat > target/gh-pages-root/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head><title>Kafka Avro Demo - Test Reports</title></head>
+          <body>
+          <h2>Test Reports</h2>
+          <ul>
+          <li><a href="karate-report/karate-summary.html">Karate Report (15 scenarios)</a></li>
+          <li><a href="allure-report/index.html">Allure Report</a></li>
+          </ul>
+          </body>
+          </html>
+          EOF
+
+      - name: Deploy index to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/gh-pages-root
+          keep_files: true
+
       - name: Deploy Karate Report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
