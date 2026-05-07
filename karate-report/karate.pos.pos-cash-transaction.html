@@ -21,7 +21,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   capture_pageview:false,
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
-    posthog.capture("report_feature",{distinct_id:"78e11310-6a4f-49c9-bfc2-a3487fa47235",karate_version:"1.4.0",karate_meta:null});
+    posthog.capture("report_feature",{distinct_id:"fc72137b-32a2-434c-8835-bc86a93447a5",karate_version:"1.4.0",karate_meta:null});
   }
 });
 </script>
@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-05-07 08:28:36 PM</div>
+    <div>2026-05-07 08:48:29 PM</div>
   </div>
 </div>
 
@@ -99,7 +99,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>6478</span>
+              <span>ms:</span>&nbsp;<span>5585</span>
             </div>
           </div>
           <div class="step-row">
@@ -122,7 +122,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -131,13 +131,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.21">20:28:15.735 === Karate Config === 
-20:28:15.736 Environment: local 
-20:28:15.737 Mode: PLAINTEXT — no SSL, no SASL 
-20:28:15.737 Base URL: http://localhost:8085 
-20:28:15.738 Schema Registry: http://localhost:8081 
-20:28:15.738 SSL Enabled: false 
-20:28:15.739 ==================== 
+  <div class="preformatted" data-parent="0.21">20:48:09.282 === Karate Config === 
+20:48:09.282 Environment: local 
+20:48:09.283 Mode: PLAINTEXT — no SSL, no SASL 
+20:48:09.283 Base URL: http://localhost:8085 
+20:48:09.283 Schema Registry: http://localhost:8081 
+20:48:09.283 SSL Enabled: false 
+20:48:09.283 ==================== 
 </div>   
 
   
@@ -185,7 +185,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def KafkaUtil = Java.type(&#39;kafka.KafkaAvroConsumerUtil&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">5</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -220,7 +220,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def txnId = &#39;TXN-&#39; + java.lang.System.currentTimeMillis()</span>
       </div>
     </div>
-    <div class="time-cell passed">14</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -248,7 +248,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;/pos/transactions&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -276,7 +276,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">26</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -312,7 +312,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">225</div>
+    <div class="time-cell passed">14</div>
   </div>
 
    
@@ -368,7 +368,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.transactionId == txnId</span>
       </div>
     </div>
-    <div class="time-cell passed">13</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -424,7 +424,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.message       == &#39;Transaction processed successfully&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -452,7 +452,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>print &#39;STEP 1 PASSED: API accepted cash transaction&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -461,7 +461,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.55">20:28:16.060 [print] STEP 1 PASSED: API accepted cash transaction 
+  <div class="preformatted" data-parent="0.55">20:48:09.305 [print] STEP 1 PASSED: API accepted cash transaction 
 </div>   
 
   
@@ -488,7 +488,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>java.lang.Thread.sleep(2000)</span>
       </div>
     </div>
-    <div class="time-cell passed">2008</div>
+    <div class="time-cell passed">2002</div>
   </div>
 
    
@@ -523,7 +523,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def event = KafkaUtil.getMessage(&#39;pos-transactions&#39;, txnId, 10)</span>
       </div>
     </div>
-    <div class="time-cell passed">4167</div>
+    <div class="time-cell passed">3550</div>
   </div>
 
    
@@ -551,7 +551,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>print &#39;Kafka event:&#39;, event</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">5</div>
   </div>
 
    
@@ -560,8 +560,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.63">20:28:22.240 [print] Kafka event: {
-  &quot;transactionId&quot;: &quot;TXN-1778185695786&quot;,
+  <div class="preformatted" data-parent="0.63">20:48:14.861 [print] Kafka event: {
+  &quot;transactionId&quot;: &quot;TXN-1778186889287&quot;,
   &quot;storeId&quot;: &quot;STORE-001&quot;,
   &quot;registerId&quot;: &quot;REG-001&quot;,
   &quot;totalAmount&quot;: 25.99,
@@ -569,7 +569,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   &quot;paymentMethod&quot;: &quot;CASH&quot;,
   &quot;status&quot;: &quot;COMPLETED&quot;,
   &quot;cashierId&quot;: &quot;C001&quot;,
-  &quot;timestamp&quot;: 1778185696030
+  &quot;timestamp&quot;: 1778186889294
 }
  
 </div>   
@@ -731,7 +731,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>assert event.totalAmount  &gt; 0</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -759,7 +759,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>assert event.timestamp    &gt; 0</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -796,7 +796,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.73">20:28:22.250 [print] STEP 2 PASSED: Kafka event verified for cash transaction 
+  <div class="preformatted" data-parent="0.73">20:48:14.870 [print] STEP 2 PASSED: Kafka event verified for cash transaction 
 </div>   
 
   
@@ -817,7 +817,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>5564</span>
+              <span>ms:</span>&nbsp;<span>5581</span>
             </div>
           </div>
           <div class="step-row">
@@ -849,13 +849,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.21">20:28:22.312 === Karate Config === 
-20:28:22.312 Environment: local 
-20:28:22.313 Mode: PLAINTEXT — no SSL, no SASL 
-20:28:22.313 Base URL: http://localhost:8085 
-20:28:22.313 Schema Registry: http://localhost:8081 
-20:28:22.314 SSL Enabled: false 
-20:28:22.314 ==================== 
+  <div class="preformatted" data-parent="0.21">20:48:14.882 === Karate Config === 
+20:48:14.883 Environment: local 
+20:48:14.883 Mode: PLAINTEXT — no SSL, no SASL 
+20:48:14.883 Base URL: http://localhost:8085 
+20:48:14.883 Schema Registry: http://localhost:8081 
+20:48:14.883 SSL Enabled: false 
+20:48:14.883 ==================== 
 </div>   
 
   
@@ -875,7 +875,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -903,7 +903,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def KafkaUtil = Java.type(&#39;kafka.KafkaAvroConsumerUtil&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -938,7 +938,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def txnId = &#39;TXN-&#39; + java.lang.System.currentTimeMillis()</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -994,7 +994,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1030,7 +1030,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">7</div>
+    <div class="time-cell passed">11</div>
   </div>
 
    
@@ -1093,7 +1093,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>java.lang.Thread.sleep(2000)</span>
       </div>
     </div>
-    <div class="time-cell passed">2002</div>
+    <div class="time-cell passed">2001</div>
   </div>
 
    
@@ -1121,7 +1121,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def event = KafkaUtil.getMessage(&#39;pos-transactions&#39;, txnId, 10)</span>
       </div>
     </div>
-    <div class="time-cell passed">3548</div>
+    <div class="time-cell passed">3565</div>
   </div>
 
    
@@ -1194,7 +1194,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>print &#39;PASSED: All schema fields correct types&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -1203,7 +1203,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.120">20:28:27.880 [print] PASSED: All schema fields correct types 
+  <div class="preformatted" data-parent="0.120">20:48:20.466 [print] PASSED: All schema fields correct types 
 </div>   
 
   
@@ -1224,7 +1224,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>5555</span>
+              <span>ms:</span>&nbsp;<span>5564</span>
             </div>
           </div>
           <div class="step-row">
@@ -1256,13 +1256,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.21">20:28:27.892 === Karate Config === 
-20:28:27.892 Environment: local 
-20:28:27.892 Mode: PLAINTEXT — no SSL, no SASL 
-20:28:27.892 Base URL: http://localhost:8085 
-20:28:27.893 Schema Registry: http://localhost:8081 
-20:28:27.893 SSL Enabled: false 
-20:28:27.893 ==================== 
+  <div class="preformatted" data-parent="0.21">20:48:20.475 === Karate Config === 
+20:48:20.475 Environment: local 
+20:48:20.475 Mode: PLAINTEXT — no SSL, no SASL 
+20:48:20.475 Base URL: http://localhost:8085 
+20:48:20.475 Schema Registry: http://localhost:8081 
+20:48:20.475 SSL Enabled: false 
+20:48:20.476 ==================== 
 </div>   
 
   
@@ -1527,7 +1527,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def event = KafkaUtil.getMessage(&#39;pos-transactions&#39;, txnId, 10)</span>
       </div>
     </div>
-    <div class="time-cell passed">3540</div>
+    <div class="time-cell passed">3549</div>
   </div>
 
    
@@ -1648,7 +1648,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.153">20:28:33.449 [print] PASSED: Business rules verified for cash transaction 
+  <div class="preformatted" data-parent="0.153">20:48:26.041 [print] PASSED: Business rules verified for cash transaction 
 </div>   
 
   
@@ -1701,13 +1701,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="1.21">20:28:33.461 === Karate Config === 
-20:28:33.461 Environment: local 
-20:28:33.461 Mode: PLAINTEXT — no SSL, no SASL 
-20:28:33.462 Base URL: http://localhost:8085 
-20:28:33.462 Schema Registry: http://localhost:8081 
-20:28:33.462 SSL Enabled: false 
-20:28:33.462 ==================== 
+  <div class="preformatted" data-parent="1.21">20:48:26.050 === Karate Config === 
+20:48:26.050 Environment: local 
+20:48:26.050 Mode: PLAINTEXT — no SSL, no SASL 
+20:48:26.050 Base URL: http://localhost:8085 
+20:48:26.050 Schema Registry: http://localhost:8081 
+20:48:26.050 SSL Enabled: false 
+20:48:26.051 ==================== 
 </div>   
 
   
@@ -1755,7 +1755,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def KafkaUtil = Java.type(&#39;kafka.KafkaAvroConsumerUtil&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1881,7 +1881,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">7</div>
   </div>
 
    
@@ -1937,7 +1937,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.status  == &#39;COMPLETED&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2002,7 +2002,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="1.180">20:28:33.475 [print] PASSED: Cash sale for store STORE-001 
+  <div class="preformatted" data-parent="1.180">20:48:26.063 [print] PASSED: Cash sale for store STORE-001 
 </div>   
 
   
@@ -2023,7 +2023,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>11</span>
+              <span>ms:</span>&nbsp;<span>13</span>
             </div>
           </div>
           <div class="step-row">
@@ -2055,13 +2055,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="2.21">20:28:33.487 === Karate Config === 
-20:28:33.487 Environment: local 
-20:28:33.488 Mode: PLAINTEXT — no SSL, no SASL 
-20:28:33.488 Base URL: http://localhost:8085 
-20:28:33.488 Schema Registry: http://localhost:8081 
-20:28:33.488 SSL Enabled: false 
-20:28:33.488 ==================== 
+  <div class="preformatted" data-parent="2.21">20:48:26.071 === Karate Config === 
+20:48:26.071 Environment: local 
+20:48:26.071 Mode: PLAINTEXT — no SSL, no SASL 
+20:48:26.071 Base URL: http://localhost:8085 
+20:48:26.072 Schema Registry: http://localhost:8081 
+20:48:26.072 SSL Enabled: false 
+20:48:26.072 ==================== 
 </div>   
 
   
@@ -2235,7 +2235,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">7</div>
   </div>
 
    
@@ -2291,7 +2291,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.status  == &#39;COMPLETED&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -2347,7 +2347,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>print &#39;PASSED: Cash sale for store STORE-002&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -2356,7 +2356,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="2.180">20:28:33.501 [print] PASSED: Cash sale for store STORE-002 
+  <div class="preformatted" data-parent="2.180">20:48:26.086 [print] PASSED: Cash sale for store STORE-002 
 </div>   
 
   
@@ -2377,7 +2377,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>13</span>
+              <span>ms:</span>&nbsp;<span>12</span>
             </div>
           </div>
           <div class="step-row">
@@ -2409,13 +2409,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="3.21">20:28:33.513 === Karate Config === 
-20:28:33.513 Environment: local 
-20:28:33.514 Mode: PLAINTEXT — no SSL, no SASL 
-20:28:33.514 Base URL: http://localhost:8085 
-20:28:33.514 Schema Registry: http://localhost:8081 
-20:28:33.514 SSL Enabled: false 
-20:28:33.515 ==================== 
+  <div class="preformatted" data-parent="3.21">20:48:26.093 === Karate Config === 
+20:48:26.094 Environment: local 
+20:48:26.094 Mode: PLAINTEXT — no SSL, no SASL 
+20:48:26.094 Base URL: http://localhost:8085 
+20:48:26.094 Schema Registry: http://localhost:8081 
+20:48:26.094 SSL Enabled: false 
+20:48:26.094 ==================== 
 </div>   
 
   
@@ -2589,7 +2589,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">9</div>
+    <div class="time-cell passed">8</div>
   </div>
 
    
@@ -2710,7 +2710,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="3.180">20:28:33.529 [print] PASSED: Cash sale for store STORE-003 
+  <div class="preformatted" data-parent="3.180">20:48:26.107 [print] PASSED: Cash sale for store STORE-003 
 </div>   
 
   
@@ -2731,7 +2731,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>3031</span>
+              <span>ms:</span>&nbsp;<span>3041</span>
             </div>
           </div>
           <div class="step-row">
@@ -2763,13 +2763,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.21">20:28:33.538 === Karate Config === 
-20:28:33.538 Environment: local 
-20:28:33.539 Mode: PLAINTEXT — no SSL, no SASL 
-20:28:33.539 Base URL: http://localhost:8085 
-20:28:33.539 Schema Registry: http://localhost:8081 
-20:28:33.539 SSL Enabled: false 
-20:28:33.539 ==================== 
+  <div class="preformatted" data-parent="0.21">20:48:26.117 === Karate Config === 
+20:48:26.117 Environment: local 
+20:48:26.117 Mode: PLAINTEXT — no SSL, no SASL 
+20:48:26.117 Base URL: http://localhost:8085 
+20:48:26.117 Schema Registry: http://localhost:8081 
+20:48:26.117 SSL Enabled: false 
+20:48:26.117 ==================== 
 </div>   
 
   
@@ -2817,7 +2817,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def KafkaUtil = Java.type(&#39;kafka.KafkaAvroConsumerUtil&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2880,7 +2880,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def fakeEvent = KafkaUtil.getMessage(&#39;pos-transactions&#39;, &#39;FAKE-TXN-999&#39;, 3)</span>
       </div>
     </div>
-    <div class="time-cell passed">3027</div>
+    <div class="time-cell passed">3038</div>
   </div>
 
    
@@ -2915,7 +2915,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match fakeEvent == null</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2943,7 +2943,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>print &#39;PASSED: Non-existent transaction correctly returns null&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -2952,7 +2952,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.200">20:28:36.571 [print] PASSED: Non-existent transaction correctly returns null 
+  <div class="preformatted" data-parent="0.200">20:48:29.160 [print] PASSED: Non-existent transaction correctly returns null 
 </div>   
 
   
