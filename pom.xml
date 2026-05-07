@@ -55,7 +55,7 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
-        <!-- JSON ObjectMapper (for Kafka string serialization) -->
+        <!-- JSON ObjectMapper -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -196,18 +196,6 @@
                     <reportVersion>${allure.version}</reportVersion>
                 </configuration>
             </plugin>
-
-          <!-- Surefire with Allure -->
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>3.1.2</version>
-    <configuration>
-        <argLine>
-            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.20/aspectjweaver-1.9.20.jar"
-        </argLine>
-    </configuration>
-</plugin>
 
         </plugins>
     </build>
