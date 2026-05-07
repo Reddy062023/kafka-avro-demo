@@ -115,7 +115,7 @@ jobs:
       - name: Run all POS tests
         run: |
           mvn test \
-            -Dtest=KarateRunner#testPosCashTransaction+testPosCardPayment \
+            -Dtest=KarateRunner#testAllPosTests \
             -Dkarate.env=local \
             -DfailIfNoTests=false || true
 
@@ -126,6 +126,12 @@ jobs:
           ls -la target/surefire-reports/ || echo "No surefire reports"
           echo "=== karate-reports ==="
           ls -la target/karate-reports/ || echo "No karate reports"
+
+      - name: Copy surefire results for Allure
+        if: always()
+        run: |
+          mkdir -p target/allure-results
+          cp target/surefire-reports/*.xml target/allure-results/ || true
 
       - name: Generate Allure Report
         if: always()
@@ -138,6 +144,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: target/karate-reports
           destination_dir: karate-report
+
+      - name: Deploy Allure Report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/site/allure-maven-plugin
+          destination_dir: allure-report
 
       - name: Upload Allure HTML Report
         if: always()

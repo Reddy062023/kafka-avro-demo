@@ -8,12 +8,10 @@ import io.qameta.allure.junit5.AllureJunit5;
 class KarateRunner {
 
     @Karate.Test
-    Karate testPosCashTransaction() {
-        return Karate.run("classpath:karate/pos/pos-cash-transaction.feature");
-    }
-
-    @Karate.Test
-    Karate testPosCardPayment() {
-        return Karate.run("classpath:karate/pos/pos-card-payment.feature");
+    Karate testAllPosTests() {
+        return Karate.run(
+            "classpath:karate/pos/pos-cash-transaction.feature",
+            "classpath:karate/pos/pos-card-payment.feature"
+        );
     }
 }
