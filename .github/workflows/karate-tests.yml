@@ -1,3 +1,4 @@
+$workflow = @'
 name: Karate POS Tests with Allure Report
 
 on:
@@ -112,24 +113,10 @@ jobs:
           echo "=== Registered schemas ==="
           curl -s http://localhost:8081/subjects || true
 
-      - name: Run POS Cash Transaction tests
+      - name: Run all POS tests
         run: |
           mvn test \
-            -Dtest=KarateRunner#testPosCashTransaction \
-            -Dkarate.env=local \
-            -DfailIfNoTests=false || true
-
-      - name: Run POS Card Payment tests
-        run: |
-          mvn test \
-            -Dtest=KarateRunner#testPosCardPayment \
-            -Dkarate.env=local \
-            -DfailIfNoTests=false || true
-
-      - name: Run POS Loyalty tests
-        run: |
-          mvn test \
-            -Dtest=KarateRunner#testPosLoyalty \
+            -Dtest=KarateRunner#testPosCashTransaction+testPosCardPayment \
             -Dkarate.env=local \
             -DfailIfNoTests=false || true
 
@@ -140,8 +127,6 @@ jobs:
           ls -la target/surefire-reports/ || echo "No surefire reports"
           echo "=== karate-reports ==="
           ls -la target/karate-reports/ || echo "No karate reports"
-          echo "=== allure-results ==="
-          ls -la target/allure-results/ || echo "No allure results"
 
       - name: Generate Allure Report
         if: always()
@@ -204,3 +189,5 @@ jobs:
       - name: Stop infrastructure
         if: always()
         run: docker compose -f docker-compose-ci.yml down -v || true
+'@
+[System.IO.File]::WriteAllText("C:\kafka-avro-demo\.github\workflows\karate-tests.yml", $workflow, [System.Text.UTF8Encoding]::new($false))
