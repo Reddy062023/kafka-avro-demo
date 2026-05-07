@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "Transaction",
+  "namespace": "com.pos.avro",
+  "fields": [
+    { "name": "transactionId", "type": "string" },
+    { "name": "storeId", "type": "string" },
+    { "name": "registerId", "type": "string" },
+    { "name": "totalAmount", "type": "double" },
+    { "name": "taxAmount", "type": "double", "default": 0.0 },
+    { "name": "paymentMethod", "type": "string" },
+    { "name": "status", "type": "string", "default": "COMPLETED" },
+    { "name": "cashierId", "type": "string", "default": "UNKNOWN" },
+    { "name": "timestamp", "type": "long" }
+  ]
+}
