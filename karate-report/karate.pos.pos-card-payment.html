@@ -21,7 +21,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   capture_pageview:false,
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
-    posthog.capture("report_feature",{distinct_id:"da8fbb5d-abf9-424a-8961-27d324a159cf",karate_version:"1.4.0",karate_meta:null});
+    posthog.capture("report_feature",{distinct_id:"a7ece9af-2db4-439f-9c2e-0ecc5fcb6d01",karate_version:"1.4.0",karate_meta:null});
   }
 });
 </script>
@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-05-07 09:21:38 PM</div>
+    <div>2026-05-07 10:50:36 PM</div>
   </div>
 </div>
 
@@ -102,7 +102,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>5697</span>
+              <span>ms:</span>&nbsp;<span>5690</span>
             </div>
           </div>
           <div class="step-row">
@@ -134,13 +134,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">21:21:16.360 === Karate Config === 
-21:21:16.361 Environment: local 
-21:21:16.361 Mode: PLAINTEXT — no SSL, no SASL 
-21:21:16.361 Base URL: http://localhost:8085 
-21:21:16.361 Schema Registry: http://localhost:8081 
-21:21:16.362 SSL Enabled: false 
-21:21:16.362 ==================== 
+  <div class="preformatted" data-parent="0.15">22:50:13.753 === Karate Config === 
+22:50:13.754 Environment: local 
+22:50:13.755 Mode: PLAINTEXT — no SSL, no SASL 
+22:50:13.755 Base URL: http://localhost:8085 
+22:50:13.755 Schema Registry: http://localhost:8081 
+22:50:13.755 SSL Enabled: false 
+22:50:13.755 ==================== 
 </div>   
 
   
@@ -188,7 +188,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def KafkaUtil = Java.type(&#39;kafka.KafkaAvroConsumerUtil&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -216,7 +216,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def txnId = &#39;PAY-&#39; + java.lang.System.currentTimeMillis()</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -272,7 +272,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -309,7 +309,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">142</div>
+    <div class="time-cell passed">138</div>
   </div>
 
    
@@ -365,7 +365,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.approved == true</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -393,7 +393,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.cardType == &#39;VISA&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -458,7 +458,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.49">21:21:16.511 [print] STEP 1 PASSED: API accepted VISA payment 
+  <div class="preformatted" data-parent="0.49">22:50:13.902 [print] STEP 1 PASSED: API accepted VISA payment 
 </div>   
 
   
@@ -506,7 +506,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def event = KafkaUtil.getMessage(&#39;pos-payment-events&#39;, txnId, 10)</span>
       </div>
     </div>
-    <div class="time-cell passed">3541</div>
+    <div class="time-cell passed">3538</div>
   </div>
 
    
@@ -534,7 +534,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match event != null</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -618,7 +618,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>match event.maskedPAN       == &#39;****1234&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -730,7 +730,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>assert event.cashBackAmount == 0.0</span>
       </div>
     </div>
-    <div class="time-cell passed">4</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -767,7 +767,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.64">21:21:22.061 [print] STEP 2 PASSED: VISA payment event verified in Kafka 
+  <div class="preformatted" data-parent="0.64">22:50:19.447 [print] STEP 2 PASSED: VISA payment event verified in Kafka 
 </div>   
 
   
@@ -788,7 +788,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>5542</span>
+              <span>ms:</span>&nbsp;<span>5547</span>
             </div>
           </div>
           <div class="step-row">
@@ -820,13 +820,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">21:21:22.068 === Karate Config === 
-21:21:22.068 Environment: local 
-21:21:22.068 Mode: PLAINTEXT — no SSL, no SASL 
-21:21:22.069 Base URL: http://localhost:8085 
-21:21:22.069 Schema Registry: http://localhost:8081 
-21:21:22.069 SSL Enabled: false 
-21:21:22.069 ==================== 
+  <div class="preformatted" data-parent="0.15">22:50:19.455 === Karate Config === 
+22:50:19.455 Environment: local 
+22:50:19.455 Mode: PLAINTEXT — no SSL, no SASL 
+22:50:19.455 Base URL: http://localhost:8085 
+22:50:19.455 Schema Registry: http://localhost:8081 
+22:50:19.455 SSL Enabled: false 
+22:50:19.456 ==================== 
 </div>   
 
   
@@ -995,7 +995,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">7</div>
   </div>
 
    
@@ -1079,7 +1079,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def event = KafkaUtil.getMessage(&#39;pos-payment-events&#39;, txnId, 10)</span>
       </div>
     </div>
-    <div class="time-cell passed">3532</div>
+    <div class="time-cell passed">3535</div>
   </div>
 
    
@@ -1256,7 +1256,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.100">21:21:27.612 [print] PASSED: Debit card with cash back verified 
+  <div class="preformatted" data-parent="0.100">22:50:25.003 [print] PASSED: Debit card with cash back verified 
 </div>   
 
   
@@ -1277,7 +1277,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>5547</span>
+              <span>ms:</span>&nbsp;<span>5545</span>
             </div>
           </div>
           <div class="step-row">
@@ -1309,13 +1309,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">21:21:27.619 === Karate Config === 
-21:21:27.619 Environment: local 
-21:21:27.619 Mode: PLAINTEXT — no SSL, no SASL 
-21:21:27.619 Base URL: http://localhost:8085 
-21:21:27.619 Schema Registry: http://localhost:8081 
-21:21:27.619 SSL Enabled: false 
-21:21:27.620 ==================== 
+  <div class="preformatted" data-parent="0.15">22:50:25.010 === Karate Config === 
+22:50:25.010 Environment: local 
+22:50:25.010 Mode: PLAINTEXT — no SSL, no SASL 
+22:50:25.011 Base URL: http://localhost:8085 
+22:50:25.011 Schema Registry: http://localhost:8081 
+22:50:25.011 SSL Enabled: false 
+22:50:25.011 ==================== 
 </div>   
 
   
@@ -1484,7 +1484,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">8</div>
+    <div class="time-cell passed">7</div>
   </div>
 
    
@@ -1568,7 +1568,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def event = KafkaUtil.getMessage(&#39;pos-payment-events&#39;, txnId, 10)</span>
       </div>
     </div>
-    <div class="time-cell passed">3536</div>
+    <div class="time-cell passed">3534</div>
   </div>
 
    
@@ -1643,7 +1643,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.145">21:21:33.167 [print] PASSED: Payment event schema validation 
+  <div class="preformatted" data-parent="0.145">22:50:30.557 [print] PASSED: Payment event schema validation 
 </div>   
 
   
@@ -1664,7 +1664,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>5540</span>
+              <span>ms:</span>&nbsp;<span>5549</span>
             </div>
           </div>
           <div class="step-row">
@@ -1696,13 +1696,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.15">21:21:33.173 === Karate Config === 
-21:21:33.173 Environment: local 
-21:21:33.174 Mode: PLAINTEXT — no SSL, no SASL 
-21:21:33.174 Base URL: http://localhost:8085 
-21:21:33.174 Schema Registry: http://localhost:8081 
-21:21:33.174 SSL Enabled: false 
-21:21:33.174 ==================== 
+  <div class="preformatted" data-parent="0.15">22:50:30.563 === Karate Config === 
+22:50:30.563 Environment: local 
+22:50:30.563 Mode: PLAINTEXT — no SSL, no SASL 
+22:50:30.564 Base URL: http://localhost:8085 
+22:50:30.564 Schema Registry: http://localhost:8081 
+22:50:30.564 SSL Enabled: false 
+22:50:30.564 ==================== 
 </div>   
 
   
@@ -2011,7 +2011,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def event = KafkaUtil.getMessage(&#39;pos-payment-events&#39;, txnId, 10)</span>
       </div>
     </div>
-    <div class="time-cell passed">3530</div>
+    <div class="time-cell passed">3537</div>
   </div>
 
    
@@ -2160,7 +2160,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.183">21:21:38.715 [print] PASSED: Declined payment event verified in Kafka 
+  <div class="preformatted" data-parent="0.183">22:50:36.114 [print] PASSED: Declined payment event verified in Kafka 
 </div>   
 
   
@@ -2181,7 +2181,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>10</span>
+              <span>ms:</span>&nbsp;<span>9</span>
             </div>
           </div>
           <div class="step-row">
@@ -2213,13 +2213,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="1.15">21:21:38.721 === Karate Config === 
-21:21:38.721 Environment: local 
-21:21:38.721 Mode: PLAINTEXT — no SSL, no SASL 
-21:21:38.721 Base URL: http://localhost:8085 
-21:21:38.721 Schema Registry: http://localhost:8081 
-21:21:38.721 SSL Enabled: false 
-21:21:38.721 ==================== 
+  <div class="preformatted" data-parent="1.15">22:50:36.120 === Karate Config === 
+22:50:36.121 Environment: local 
+22:50:36.121 Mode: PLAINTEXT — no SSL, no SASL 
+22:50:36.121 Base URL: http://localhost:8085 
+22:50:36.121 Schema Registry: http://localhost:8081 
+22:50:36.121 SSL Enabled: false 
+22:50:36.122 ==================== 
 </div>   
 
   
@@ -2443,7 +2443,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.approved == true</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2508,7 +2508,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="1.211">21:21:38.732 [print] PASSED: VISA payment processed 
+  <div class="preformatted" data-parent="1.211">22:50:36.131 [print] PASSED: VISA payment processed 
 </div>   
 
   
@@ -2529,7 +2529,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>10</span>
+              <span>ms:</span>&nbsp;<span>9</span>
             </div>
           </div>
           <div class="step-row">
@@ -2561,13 +2561,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="2.15">21:21:38.744 === Karate Config === 
-21:21:38.744 Environment: local 
-21:21:38.745 Mode: PLAINTEXT — no SSL, no SASL 
-21:21:38.745 Base URL: http://localhost:8085 
-21:21:38.745 Schema Registry: http://localhost:8081 
-21:21:38.745 SSL Enabled: false 
-21:21:38.745 ==================== 
+  <div class="preformatted" data-parent="2.15">22:50:36.138 === Karate Config === 
+22:50:36.138 Environment: local 
+22:50:36.138 Mode: PLAINTEXT — no SSL, no SASL 
+22:50:36.138 Base URL: http://localhost:8085 
+22:50:36.139 Schema Registry: http://localhost:8081 
+22:50:36.139 SSL Enabled: false 
+22:50:36.139 ==================== 
 </div>   
 
   
@@ -2735,7 +2735,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">7</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -2856,7 +2856,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="2.211">21:21:38.756 [print] PASSED: MASTERCARD payment processed 
+  <div class="preformatted" data-parent="2.211">22:50:36.149 [print] PASSED: MASTERCARD payment processed 
 </div>   
 
   
@@ -2909,13 +2909,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="3.15">21:21:38.763 === Karate Config === 
-21:21:38.763 Environment: local 
-21:21:38.763 Mode: PLAINTEXT — no SSL, no SASL 
-21:21:38.763 Base URL: http://localhost:8085 
-21:21:38.763 Schema Registry: http://localhost:8081 
-21:21:38.763 SSL Enabled: false 
-21:21:38.764 ==================== 
+  <div class="preformatted" data-parent="3.15">22:50:36.156 === Karate Config === 
+22:50:36.156 Environment: local 
+22:50:36.156 Mode: PLAINTEXT — no SSL, no SASL 
+22:50:36.156 Base URL: http://localhost:8085 
+22:50:36.157 Schema Registry: http://localhost:8081 
+22:50:36.157 SSL Enabled: false 
+22:50:36.157 ==================== 
 </div>   
 
   
@@ -3167,7 +3167,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.cardType == &#39;AMEX&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -3204,7 +3204,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="3.211">21:21:38.775 [print] PASSED: AMEX payment processed 
+  <div class="preformatted" data-parent="3.211">22:50:36.169 [print] PASSED: AMEX payment processed 
 </div>   
 
   
@@ -3225,7 +3225,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>9</span>
+              <span>ms:</span>&nbsp;<span>13</span>
             </div>
           </div>
           <div class="step-row">
@@ -3257,13 +3257,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="4.15">21:21:38.782 === Karate Config === 
-21:21:38.782 Environment: local 
-21:21:38.782 Mode: PLAINTEXT — no SSL, no SASL 
-21:21:38.782 Base URL: http://localhost:8085 
-21:21:38.782 Schema Registry: http://localhost:8081 
-21:21:38.782 SSL Enabled: false 
-21:21:38.782 ==================== 
+  <div class="preformatted" data-parent="4.15">22:50:36.177 === Karate Config === 
+22:50:36.177 Environment: local 
+22:50:36.177 Mode: PLAINTEXT — no SSL, no SASL 
+22:50:36.177 Base URL: http://localhost:8085 
+22:50:36.178 Schema Registry: http://localhost:8081 
+22:50:36.178 SSL Enabled: false 
+22:50:36.178 ==================== 
 </div>   
 
   
@@ -3431,7 +3431,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">9</div>
   </div>
 
    
@@ -3552,7 +3552,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="4.211">21:21:38.792 [print] PASSED: STORE_CARD payment processed 
+  <div class="preformatted" data-parent="4.211">22:50:36.191 [print] PASSED: STORE_CARD payment processed 
 </div>   
 
   
