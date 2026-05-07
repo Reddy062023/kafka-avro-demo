@@ -1,4 +1,3 @@
-$workflow = @'
 name: Karate POS Tests with Allure Report
 
 on:
@@ -189,5 +188,3 @@ jobs:
       - name: Stop infrastructure
         if: always()
         run: docker compose -f docker-compose-ci.yml down -v || true
-'@
-[System.IO.File]::WriteAllText("C:\kafka-avro-demo\.github\workflows\karate-tests.yml", $workflow, [System.Text.UTF8Encoding]::new($false))
