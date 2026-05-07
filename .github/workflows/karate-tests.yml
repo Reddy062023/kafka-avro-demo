@@ -147,13 +147,13 @@ jobs:
         if: always()
         run: mvn allure:report -DfailIfNoTests=false || true
 
-      - name: Deploy Allure Report to GitHub Pages
+      - name: Deploy Karate Report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: target/site/allure-maven-plugin
-          destination_dir: allure-report
+          publish_dir: target/karate-reports
+          destination_dir: karate-report
 
       - name: Upload Allure HTML Report
         if: always()
